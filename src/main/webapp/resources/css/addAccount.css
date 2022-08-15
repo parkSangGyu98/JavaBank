@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+.form-signin {
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	width: 100%;
+	max-width: 330px;
+	padding: 15px;
+	margin: auto;
+}
+
+.form-signin form {
+	margin-bottom: 10px;
+}
+
+.form-signin form button {
+	border: 1px solid gray;
+	background-color: lightgray;
+	font-weight: 900;
+}
+
+.form-signin form button:hover {
+  border: 1px solid gray;
+  background-color: lightgray;
+  font-weight: 900;
+  color: black;
+}

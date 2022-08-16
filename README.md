@@ -147,9 +147,11 @@
 + 계좌이체
   1. 본인 계좌를 입력하는 번거로움을 감안하여 session을 이용해 현재 로그인 한 유저가 보유한 계좌번호들을 select 박스를 이용해 미리 보여주며 선택할 수 있도록 합니다.
   2. 계좌선택을 안할 경우, 비밀번호 오류, 금액입력 오류, 동일 계좌로의 이체를 할 경우에 유효성 검사를 하였습니다.
-  3. 이상 없을 시 보내는이의 계좌에 출금 기능을, 받는이의 계좌에 입금 기능을 불러왔습니다.
-
-		<form action="transfer" method="post">
+  3. 이상 없을 시 보내는이의 계좌에 출금 기능을, 받는이의 계좌에 입금 기능을 불러왔습니다. (입금, 출금 구현할때 만들어 두었던 메소드  사용)
+			
+			transfer.jsp 일부
+			
+			<form action="transfer" method="post">
 			<h1 class="h3 mb-3 fw-normal" style="text-align:center;">계좌이체</h1>
 
 			<div class="form-floating">
@@ -177,7 +179,7 @@
 				<label for="floatingPassword">이체 금액 </label>
 			</div>
 			<button class="w-100 btn btn-lg btn-primary" type="submit">이체</button>
-		</form>
+			</form>
 
 
 

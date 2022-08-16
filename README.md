@@ -183,44 +183,44 @@
 
 
 
-		TransferController 일부
+			TransferController 일부
 
-		@PostMapping("/controller/transfer")
-		public String transfer(String sendAccountNum, String getAccountNum, String passwd, String money, Model model) {
-			if (sendAccountNum == "" || getAccountNum == "" || passwd == "" || money.isEmpty() == true) {
-				model.addAttribute("msg", "빈칸을 입력해 주세요.");
-				return "error/alert";
-			}
-			if (customerService.checkAccountPasswd(sendAccountNum).getPasswd().equals(passwd)) {
-				Double dMoney = Double.valueOf(money);
-				if (dMoney > 0) {
-					if (accountService.checkingBalance(sendAccountNum).getBalance() >= dMoney) {
-						if (accountService.checkAccountByAccountNum(getAccountNum) != null) {
-							if (!sendAccountNum.equals(getAccountNum)) {
-								accountService.withdraw(sendAccountNum, dMoney);
-								accountService.deposit(getAccountNum, dMoney);
-								return "redirect:/controller/main_page";
+			@PostMapping("/controller/transfer")
+			public String transfer(String sendAccountNum, String getAccountNum, String passwd, String money, Model model) {
+				if (sendAccountNum == "" || getAccountNum == "" || passwd == "" || money.isEmpty() == true) {
+					model.addAttribute("msg", "빈칸을 입력해 주세요.");
+					return "error/alert";
+				}
+				if (customerService.checkAccountPasswd(sendAccountNum).getPasswd().equals(passwd)) {
+					Double dMoney = Double.valueOf(money);
+					if (dMoney > 0) {
+						if (accountService.checkingBalance(sendAccountNum).getBalance() >= dMoney) {
+							if (accountService.checkAccountByAccountNum(getAccountNum) != null) {
+								if (!sendAccountNum.equals(getAccountNum)) {
+									accountService.withdraw(sendAccountNum, dMoney);
+									accountService.deposit(getAccountNum, dMoney);
+									return "redirect:/controller/main_page";
+								} else {
+									model.addAttribute("msg", "본인 계좌로의 이체는 불가능 합니다.");
+									return "error/alert";
+								}
 							} else {
-								model.addAttribute("msg", "본인 계좌로의 이체는 불가능 합니다.");
+								model.addAttribute("msg", "받으시는 분의 계좌가 존재하지 않습니다.");
 								return "error/alert";
 							}
 						} else {
-							model.addAttribute("msg", "받으시는 분의 계좌가 존재하지 않습니다.");
+							model.addAttribute("msg", "잔고부족");
 							return "error/alert";
 						}
 					} else {
-						model.addAttribute("msg", "잔고부족");
+						model.addAttribute("msg", "올바른 금액을 입력해 주세요.");
 						return "error/alert";
 					}
 				} else {
-					model.addAttribute("msg", "올바른 금액을 입력해 주세요.");
+					model.addAttribute("msg", "올바른 비밀번호를 입력해주세요.");
 					return "error/alert";
 				}
-			} else {
-				model.addAttribute("msg", "올바른 비밀번호를 입력해주세요.");
-				return "error/alert";
 			}
-		}
 	    
 
  ## 구현 화면

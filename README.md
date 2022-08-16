@@ -225,15 +225,17 @@
 
  ## 구현 화면
  ### 로그인
+ 1. 로그인 실패 시 alert을 이용해 경고문을 띄우고 다시 로그인 화면으로 보냅니다.
  
  ![image](https://user-images.githubusercontent.com/103983349/184826589-0afcb32a-c4d8-43aa-b67f-0ff5a377ee79.png)
 
  ### 회원가입
+ + ID중복확인은 회원가입 버튼 클릭 시 작동합니다.
  
  ![image](https://user-images.githubusercontent.com/103983349/184826760-46824b75-cee6-4045-8255-10738db5c616.png)
 
  ### 메인
- + 본인이 보유한 계좌를 보여줍니다.
+ + 로그인 하자마자 볼수있는 화면으로, 본인이 보유한 계좌를 보여줍니다.
  
  ![image](https://user-images.githubusercontent.com/103983349/184830508-fc254f54-6d00-46d7-8b95-c2cac0c72b1c.png)
 
@@ -243,18 +245,22 @@
  ![image](https://user-images.githubusercontent.com/103983349/184830628-7f1c2d3a-a43c-4fc3-a5c9-743d19070961.png)
 
  ### 계좌이체
+ 1. 보내는이의 계좌번호는 본인이 보유한 계좌번호를 select박스를 이용해 미리 보여줍니다.
  
  ![image](https://user-images.githubusercontent.com/103983349/184830691-12976b12-2d10-4c36-9227-31175363fd62.png)
 
  ### 입금
+ 1. 입금 계좌번호는 본인이 보유한 계좌번호를 select박스를 이용해 미리 보여줍니다.
 
 ![image](https://user-images.githubusercontent.com/103983349/184830737-5abeb2af-cc81-48a5-9c9d-c53c5b54ee4d.png)
 
  ### 출금
+ 1. 출금 계좌번호는 본인이 보유한 계좌번호를 select박스를 이용해 미리 보여줍니다.
 
 ![image](https://user-images.githubusercontent.com/103983349/184830780-6cf00d6b-7180-4f21-862a-e024aee23ba7.png)
 
  ### 계좌 생성
+ 1. 계좌 미선택 시 생성 불가능합니다.
 
 ![image](https://user-images.githubusercontent.com/103983349/184830827-588c02e8-02ca-4756-837e-4aa345074de5.png)
 

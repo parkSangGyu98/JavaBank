@@ -103,20 +103,20 @@
   1. 입력한 아이디 비밀번호와 DB에 저장된 아이디 비밀번호의 일치여부를 확인한 뒤 로그인 시킵니다.
   2. 유효성검사를 통과한 경우 로그인한 사용자의 ID를 session에 저장시킵니다.
 	
-	    LoginController 일부
-		
-	    @PostMapping("/controller/login")
-		public String addAccount(Customer customer, HttpSession session,  HttpServletRequest request, Model model) {
-		session = request.getSession();
-		if (customerService.login(customer.getId()).getId().equals(customer.getId())
-		 && customerService.login(customer.getId()).getPasswd().equals(customer.getPasswd())) {
-			customerService.context.close();
-			session.setAttribute("customerId", customer.getId());
-			return "redirect:/controller/main_page";
-		}
-		model.addAttribute("msg", "올바른 아이디 또는 비밀번호를 입력해주세요.");
-		return "error/alert";
-		}
+		    LoginController 일부
+
+		    @PostMapping("/controller/login")
+			public String addAccount(Customer customer, HttpSession session,  HttpServletRequest request, Model model) {
+			session = request.getSession();
+			if (customerService.login(customer.getId()).getId().equals(customer.getId())
+			 && customerService.login(customer.getId()).getPasswd().equals(customer.getPasswd())) {
+				customerService.context.close();
+				session.setAttribute("customerId", customer.getId());
+				return "redirect:/controller/main_page";
+			}
+			model.addAttribute("msg", "올바른 아이디 또는 비밀번호를 입력해주세요.");
+			return "error/alert";
+			}
     
     3. 실패 시 화면
     

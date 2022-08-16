@@ -127,21 +127,21 @@
   2. DB내 저장된 ID와 입력한 ID의 중복 여부를 확인합니다.
   3. 이상 없을 시, DB에 정보를 저장함과 동시에 로그인 페이지로 화면을 전환합니다.
 
-		@PostMapping("/controller/add_customer")
-		public String addCustomer(Customer customer, Model model) {
-			if (customer.getName() == "" || customer.getId() == "" || customer.getPasswd() == "" || customer.getSsn() == ""
-					|| customer.getPhone() == "") {
-				model.addAttribute("msg", "빈칸을 입력해 주세요.");
-				return "error/alert";
+			@PostMapping("/controller/add_customer")
+			public String addCustomer(Customer customer, Model model) {
+				if (customer.getName() == "" || customer.getId() == "" || customer.getPasswd() == "" || customer.getSsn() == ""
+						|| customer.getPhone() == "") {
+					model.addAttribute("msg", "빈칸을 입력해 주세요.");
+					return "error/alert";
+				}
+				if( customerService.login(customer.getId()).getId().equals(customer.getId())) {
+					model.addAttribute("msg", "이미 사용중인 ID 입니다.");
+					return "error/alert";
+				}
+				customerService.addCustomer(customer);
+				CustomerService.context.close();
+				return "customer/login";
 			}
-			if( customerService.login(customer.getId()).getId().equals(customer.getId())) {
-				model.addAttribute("msg", "이미 사용중인 ID 입니다.");
-				return "error/alert";
-			}
-			customerService.addCustomer(customer);
-			CustomerService.context.close();
-			return "customer/login";
-		}
 
 
 + 계좌이체

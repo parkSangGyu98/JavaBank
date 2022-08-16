@@ -62,6 +62,5 @@ public class TransferController {
 			model.addAttribute("msg", "올바른 비밀번호를 입력해주세요.");
 			return "error/alert";
 		}
-
 	}
 }

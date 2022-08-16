@@ -34,7 +34,6 @@ public class AddCustomerController {
 		model.addAttribute("customer", customer);
 		CustomerService.context.close();
 		return "customer/login";
-
 	}
 
 }

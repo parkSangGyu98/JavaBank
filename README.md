@@ -62,6 +62,42 @@
 
            }
 
++ 계좌 상세내역 조회
+  1. 버튼을 클릭하기전의 jsp 에서 컨텐츠 부분만 바꿔서 작업하였습니다.
+  2. 로그인 시 등록한 session값(로그인한 ID) 를 이용하여 DB에서 보유중인 계좌정보를 가져옵니다.
+  3. 가져온 계좌정보들을 for문을 이용하여 상세정보를 조회시킵니다.
+  4. 돌아가기 버튼 클릭시 main_page 컨트롤러로 이동합니다.
+
+           get_Detail.jsp 일부
+
+           <form action="main_page" method="get" style="text-align: center; margin-bottom: 50px;">
+			       <button class="card-text mb-auto getBalanceButton"
+              type="submit">돌아가기</button>
+            </form>
+            <div class="row mb-2">
+
+             <c:forEach var="account" items="${accountNum}">
+              <div class="col-md-6">
+               <div
+                class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                <div class="col p-4 d-flex flex-column position-static">
+                 <c:if test="${account.accType eq 'S'}">
+                  <h3 class="mb-0">Saving Account</h3>
+                 </c:if>
+                 <c:if test="${account.accType eq 'C'}">
+                  <h3 class="mb-0">Checking Account</h3>
+                 </c:if>
+                 <p class="card-text mb-auto">${account.accountNum}</p>
+                 <div class="mb-1">잔고 : ${account.balance}원</div>
+                 <div class="mb-1">이자율 : ${account.interestRate}%</div>
+                 <div class="mb-1">대출한도 : ${account.overAmount}원</div>
+
+                </div>
+               </div>
+              </div>
+             </c:forEach>
+
+            </div>
 
  ## 구현 화면
  ### 로그인

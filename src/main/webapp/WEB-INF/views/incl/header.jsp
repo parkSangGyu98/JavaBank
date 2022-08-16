@@ -44,17 +44,17 @@
 <main>
   <div class="container" style="background-color: gray;">
     <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-      <a href="/banking/controller/main_page" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+      <a href="/JavaBank/controller/main_page" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
         <span class="fs-4" style="color: white;">JavaBank</span>
       </a>
 
       <ul class="nav nav-pills" >
-        <li class="nav-item"><a href="/banking/controller/main_page" style="color: white;" class="nav-link">홈</a></li>
-        <li class="nav-item"><a href="/banking/controller/transfer" style="color: white;" class="nav-link">이체</a></li>
-        <li class="nav-item"><a href="/banking/controller/deposit" style="color: white;" class="nav-link">입금</a></li>
-        <li class="nav-item"><a href="/banking/controller/withdraw" style="color: white;" class="nav-link">출금</a></li>
-        <li class="nav-item"><a href="/banking/controller/add_account" style="color: white;" class="nav-link">계좌생성</a></li>
-        <li class="nav-item"><a href="/banking/controller/login" style="color: white;" class="nav-link">로그아웃</a></li>
+        <li class="nav-item"><a href="/JavaBank/controller/main_page" style="color: white;" class="nav-link">홈</a></li>
+        <li class="nav-item"><a href="/JavaBank/controller/transfer" style="color: white;" class="nav-link">이체</a></li>
+        <li class="nav-item"><a href="/JavaBank/controller/deposit" style="color: white;" class="nav-link">입금</a></li>
+        <li class="nav-item"><a href="/JavaBank/controller/withdraw" style="color: white;" class="nav-link">출금</a></li>
+        <li class="nav-item"><a href="/JavaBank/controller/add_account" style="color: white;" class="nav-link">계좌생성</a></li>
+        <li class="nav-item"><a href="/JavaBank/controller/login" style="color: white;" class="nav-link">로그아웃</a></li>
       </ul>
     </header>
   </div>
